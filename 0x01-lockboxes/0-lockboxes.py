@@ -1,17 +1,33 @@
-import threading
+#!/usr/bin/python3
+""" LockBoxes Interview Challenge """
 
-# Define a lockbox as a threading.Lock object
-lockdown = threading.Lock()
 
-# Function that requires exclusive access to a shared resource
 def canUnlockAll(boxes):
-    with lockbox:
-        # Access shared resource here
-        # ...
+    """
+    determines if all the boxes can be opened or not
+    Returns:
+        True: all boxes can be opened
+        False: not all boxes can be opened
+    """
+    length = len(boxes)
+    keys = set()
+    opened_boxes = []
+    i = 0
 
-# Multiple threads can run the same function
-thread1 = threading.Thread(target=critical_section_of_code)
-thread2 = threading.Thread(target=critical_section_of_code)
+    while i < length:
+        oldi = i
+        opened_boxes.append(i)
+        keys.update(boxes[i])
+        for key in keys:
+            if key != 0 and key < length and key not in opened_boxes:
+                i = key
+                break
+        if oldi != i:
+            continue
+        else:
+            break
 
-thread1.start()
-thread2.start()
+    for i in range(length):
+        if i not in opened_boxes and i != 0:
+            return False
+    return True
