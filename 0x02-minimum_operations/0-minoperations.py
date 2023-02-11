@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
-""" Minimum Operations """
-
+"""Minimum Operations"""
 
 def minOperations(n):
     """
@@ -13,15 +12,13 @@ def minOperations(n):
     Returns an integer
     If n is impossible to achieve, returns 0
     """
-    if not isinstance(n, int):
+    if n <= 0:
         return 0
-
-    op = 0
+    operations = 0
     i = 2
-    while (i <= n):
-        if not (n % i):
-            n = int(n / i)
-            op += i
-            i = 1
+    while i <= n:
+        while n % i == 0:
+            operations += i
+            n /= i
         i += 1
-    return op
+    return operations
