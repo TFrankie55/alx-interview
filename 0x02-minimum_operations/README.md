@@ -1,3 +1,3 @@
-#Python - Minimum Operation Calculation
+# Python - Minimum Operation Calculation
 
 Calculate Fewest Operations Required
