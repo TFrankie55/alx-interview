@@ -10,8 +10,8 @@ def minOperations(n):
         """This loop finds all the factors
     of n and increments the number of
     operations for each factor"""
-    while n % i == 0:
-        operations += i
-        n /= i
+        while n % i == 0:
+            operations += i
+            n /= i
         i += 1
-        return operations + n
+    return operations + n
