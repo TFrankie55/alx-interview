@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Prime number game winner'''
 
 
 def is_prime(num):
