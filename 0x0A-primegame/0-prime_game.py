@@ -26,7 +26,9 @@ def isWinner(x, nums):
     for given rounds and n values.
     """
     wins = {"Maria": 0, "Ben": 0}
-    ''' dict to keep track of wins for each player '''
+    """
+    dict to keep track of wins for each player
+    """
 
     for n in nums:
         maria_turn = True
