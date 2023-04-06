@@ -24,6 +24,13 @@ def isWinner(x, nums):
     """
     determines the winner of the game
     for given rounds and n values.
+    Args:
+        x(int): Number of rounds
+        nums(list): List of n values for each round.
+
+    Returns:
+        Name of the player that won the most rounds (in string).
+        If the winner cannot be determined, return None.
     """
     wins = {"Maria": 0, "Ben": 0}
     """
