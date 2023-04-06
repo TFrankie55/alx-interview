@@ -7,10 +7,8 @@ def is_prime(num):
     function to help check if a number is a prime
     """
     if num <= 3:
-        return True
-    if num <= 1:
-        return False
-    if num % 3 == 0 or num % 2 == 0:
+        return num > 1
+    if num % 3 == 0 or num % 2 == 0 or num <= 1:
         return False
     i = 5
     while i * i <= num:
@@ -72,4 +70,7 @@ def isWinner(x, nums):
     elif wins["Maria"] < wins["Ben"]:
         return "Ben"
     else:
-        return None
+        if wins["Maria"] + wins["Ben"] == 0:
+            return None
+        else:
+            return None
