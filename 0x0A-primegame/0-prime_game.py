@@ -46,8 +46,7 @@ def isWinner(x, nums):
                     found_prime = True
                     n -= j
                     break
-            if not found_prime:
-                # if no prime number is found, current player loses
+            if not found_prime:  # if no prime number is found, current player loses
                 if maria_turn:
                     wins["Ben"] += 1
                 else:
