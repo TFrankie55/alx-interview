@@ -36,9 +36,9 @@ def isWinner(x, nums):
                     break
             if not found_prime:
                 if Maria:
-                    wins[Ben] += 1
+                    Ben += 1
                 else:
-                    wins[Maria] += 1
+                    Maria += 1
                 break
             Maria = not Maria
 
