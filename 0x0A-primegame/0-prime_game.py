@@ -8,14 +8,14 @@ def primes(n):
     """
     function to help check if a number is a prime
     """
-    prime = []
+    primes_list = []
     sieve = [True] * (n + 1)
     for p in range(2, n + 1):
         if (sieve[p]):
-            prime.append(p)
+            primes_list.append(p)
             for i in range(p, n + 1, p):
                 sieve[i] = False
-    return prime
+    return primes_list
 
 
 def isWinner(x, nums):
@@ -25,13 +25,13 @@ def isWinner(x, nums):
     """
     if x is None or nums is None or x == 0 or nums == []:
         return None
-    Maria_turn = Ben_turn = 0
+    Maria = Ben = 0
     for i in range(x):
-        prime = primes(nums[i])
-        if len(prime) % 2 == 0:
-            Ben_turn += 1
+        primes_list = primes(nums[i])
+        if len(primes_list) % 2 == 0:
+            Ben += 1
         else:
-            Maria_turn += 1
+            Maria += 1
 
     if Maria > Ben:
         return 'Maria'
