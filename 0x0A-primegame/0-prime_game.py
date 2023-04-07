@@ -4,7 +4,7 @@ Prime number game winner
 """
 
 
-def primes(n):
+def isprimes(n):
     """
     function to help check if a number is a prime
     """
@@ -27,7 +27,7 @@ def isWinner(x, nums):
         return None
     Maria = Ben = 0
     for j in range(x):
-        primes_list = primes(nums[j])
+        primes_list = isprimes(nums[j])
         if len(primes_list) % 2 == 0:
             Ben += 1
         else:
