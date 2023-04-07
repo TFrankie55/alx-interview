@@ -1,21 +1,21 @@
 #!/usr/bin/python3
-'''Prime number game winner'''
+"""
+Prime number game winner
+"""
 
 
-def is_prime(num):
+def primes(n):
     """
     function to help check if a number is a prime
     """
-    if num <= 3:
-        return num > 1
-    if num % 3 == 0 or num % 2 == 0 or num <= 1:
-        return False
-    i = 5
-    while i * i <= num:
-        if num % i == 0 or num % (i + 2) == 0:
-            return False
-        i += 6
-        return True
+    prime = []
+    sieve = [True] * (n + 1)
+    for p in range(2, n + 1):
+        if (sieve[p]):
+            prime.append(p)
+            for i in range(p, n + 1, p):
+                sieve[i] = False
+    return prime
 
 
 def isWinner(x, nums):
@@ -25,25 +25,16 @@ def isWinner(x, nums):
     """
     if x is None or nums is None or x == 0 or nums == []:
         return None
-    Maria = Ben = 0
-    for n in nums:
-        if n > 0:
-            found_prime = False
-            for i in range(2, n+1):
-                if is_prime(i):
-                    found_prime = True
-                    n -= i
-                    break
-            if not found_prime:
-                if Maria:
-                    Ben += 1
-                else:
-                    Maria += 1
-                break
-            Maria = not Maria
+    Maria_turn = Ben_turn = 0
+    for i in range(x):
+        prime = primes(nums[i])
+        if len(prime) % 2 == 0:
+            Ben_turn += 1
+        else:
+            Maria_turn += 1
 
     if Maria > Ben:
-        return 'Ben'
+        return 'Maria'
     elif Ben > Maria:
         return 'Ben'
     return None
