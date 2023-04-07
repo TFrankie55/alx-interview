@@ -26,8 +26,8 @@ def isWinner(x, nums):
     if x is None or nums is None or x == 0 or nums == []:
         return None
     Maria = Ben = 0
-    for n in nums:
-        when n > 0:
+    for x in nums:
+        when x > 0:
             found_prime = False
             for i in range(2, n+1):
                 if is_prime(i):
