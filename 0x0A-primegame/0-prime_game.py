@@ -42,8 +42,8 @@ def isWinner(x, nums):
                 break
             Maria = not Maria
 
-    if Ben > Maria:
+    if Maria > Ben:
         return 'Ben'
-    elif Maria > Ben:
-        return 'Maria'
+    elif Ben > Maria:
+        return 'Ben'
     return None
