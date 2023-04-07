@@ -18,7 +18,7 @@ def is_prime(num):
         return True
 
 
-    def isWinner(x, nums):
+def isWinner(x, nums):
     """
     To determine the winner of the game for each round and
     return the name of the player that won the most rounds.
