@@ -27,7 +27,7 @@ def isWinner(x, nums):
         return None
     Maria = Ben = 0
     for n in nums:
-        when n > 0:
+        if n > 0:
             found_prime = False
             for i in range(2, n+1):
                 if is_prime(i):
