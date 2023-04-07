@@ -26,12 +26,22 @@ def isWinner(x, nums):
     if x is None or nums is None or x == 0 or nums == []:
         return None
     Maria = Ben = 0
-    for i in range(x):
-        prime = is_prime(nums[i])
-        if len(prime) % 2 == 0:
-            Ben += 1
-        else:
-            Maria += 1
+    for n in nums:
+        when n > 0:
+            found_prime = False
+            for i in range(2, n+1):
+                if is_prime(i):
+                    found_prime = True
+                    n -= i
+                    break
+            if not found_prime:
+                if Maria:
+                    wins[Ben] += 1
+                else:
+                    wins[Maria] += 1
+                break
+            Maria = not Maria
+
     if Ben > Maria:
         return 'Ben'
     elif Maria > Ben:
