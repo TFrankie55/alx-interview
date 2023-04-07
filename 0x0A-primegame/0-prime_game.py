@@ -28,7 +28,10 @@ def isWinner(x, nums):
 
     for n in nums:
         if n == 1:
-            # If n is 1, Ben wins as there are no prime numbers for Maria to choose
+            """
+            If n is 1, Ben wins as there are
+            no prime numbers for Maria to choose
+            """
             ben_win += 1
             continue
 
