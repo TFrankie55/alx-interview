@@ -13,8 +13,8 @@ def primes(n):
     for p in range(2, n + 1):
         if (sieve[p]):
             primes_list.append(p)
-            for i in range(p, n + 1, p):
-                sieve[i] = False
+            for j in range(p, n + 1, p):
+                sieve[j] = False
     return primes_list
 
 
@@ -26,8 +26,8 @@ def isWinner(x, nums):
     if x is None or nums is None or x == 0 or nums == []:
         return None
     Maria = Ben = 0
-    for i in range(x):
-        primes_list = primes(nums[i])
+    for j in range(x):
+        primes_list = primes(nums[j])
         if len(primes_list) % 2 == 0:
             Ben += 1
         else:
