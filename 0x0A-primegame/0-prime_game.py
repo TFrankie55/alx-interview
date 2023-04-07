@@ -16,8 +16,8 @@ def is_prime(num):
             return False
         i += 6
         return True
-    
-    
+
+
     def isWinner(x, nums):
     """
     To determine the winner of the game for each round and
